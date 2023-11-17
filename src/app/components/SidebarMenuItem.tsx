@@ -17,13 +17,15 @@ export const SidebarMenuItem = ({ path, icono, titulo, subtitulo }: SidebarMenuI
     return (
         <Link
             href={path}
-            className={`w-full p-4 inline-flex space-x-4 items-center border-b rounded border-slate-700 hover:bg-white/5 transition ease-linear duration-15 ${
+            className={`w-full p-4 inline-flex lg:space-x-4 items-center justify-center lg:justify-start border-b rounded border-slate-700 hover:bg-white/5 transition ease-linear duration-15 ${
                 actualPath === path ? 'bg-blue-800' : ''
             }`}>
-            <div>{icono}</div>
+            <div className="flex items-center justify-center">{icono}</div>
             <div className="flex flex-col">
-                <span className="text-lg font-bold leading-5 text-white">{titulo}</span>
-                <span className="text-sm text-white/50 hidden md:block">{subtitulo}</span>
+                <span className="hidden lg:block text-lg font-bold leading-5 text-white">
+                    {titulo}
+                </span>
+                <span className="hidden lg:block text-sm text-white/50 ">{subtitulo}</span>
             </div>
         </Link>
     )
