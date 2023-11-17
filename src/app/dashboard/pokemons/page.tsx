@@ -1,5 +1,10 @@
 import { PokemonGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
 
+export const metadata = {
+  title: "151 Pokemons",
+  description: "151 Pokemons",
+};
+
 const getPokemons = async (
   limit = 20,
   offset = 0
@@ -12,8 +17,6 @@ const getPokemons = async (
     id: pokemon.url.split("/").at(-2)!,
     name: pokemon.name,
   }));
-
-  // throw new Error("Esto es un error que no deberia suceder");
 
   return pokemons;
 };
